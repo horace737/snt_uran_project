@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Информация о СНТ{% endblock %}
+{% block seo_description %}{% endblock %}
+
+{% block main-block-title %}Информация о СНТ{% endblock %}
+
+{% block content %}
+    <ul class="list list--links">
+        <li class="list_item">
+            <a href="{% url 'info_control' %}" class="list_item_link">
+                Управление
+            </a>
+        </li>
+        <li class="list_item">
+            <a href="{% url 'info_requisites' %}" class="list_item_link">
+                Реквизиты
+            </a>
+        </li>
+        <li class="list_item">
+            <a href="{% url 'info_plan' %}" class="list_item_link">
+                План СНТ
+            </a>
+        </li>
+    </ul>
+{% endblock %}

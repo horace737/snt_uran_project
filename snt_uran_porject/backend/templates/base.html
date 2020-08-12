@@ -1,0 +1,125 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            СНТ "Уран" | {% block title %}{% endblock %}
+        </title>
+
+        <meta name="description" content="{% block seo_description %}{% endblock %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
+
+        {% block head %}{% endblock %}
+    </head>
+    <body class="main-body">
+        <header class="main-header">
+            <div class="main-header_top">
+                <div class="container">
+                    Официальный сайт
+                </div>
+            </div>
+            <div class="main-header_sitename">
+                <div class="container">
+                    <div class="main-header_sitename_top">
+                        <div class="main-header_sitename_top_left">
+                            СНТ
+                        </div>
+                        <div class="main-header_sitename_top_right">
+                            "Уран"
+                            <div class="main-header_sitename_top_bottom">
+                                Массива 36 км
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-header_img"></div>
+        </header>
+        <nav class="main-nav">
+            <div class="container">
+                <div class="main-nav_button">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="main-nav_list">
+                    <li class="main-nav_item">
+                        <a href="{% url 'posts_list' %}" class="main-nav_link">Новости</a>
+                    </li>
+                    <li class="main-nav_item">
+                        <a href="{% url 'documents' %}" class="main-nav_link">Документы</a>
+                        <ul class="main-nav_dropdown">
+                            <li class="main-nav_item">
+                                <a href="{% url 'snt' %}" class="main-nav_link">Документы СНТ</a>
+                            </li>
+                            <li class="main-nav_item">
+                                <a href="{% url 'laws' %}" class="main-nav_link">Законодательство</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="main-nav_item">
+                        <a href="{% url 'information' %}" class="main-nav_link">Информация о СНТ</a>
+                        <ul class="main-nav_dropdown">
+                            <li class="main-nav_item">
+                                <a href="{% url 'info_control' %}" class="main-nav_link">Управление</a>
+                            </li>
+                            <li class="main-nav_item">
+                                <a href="{% url 'info_requisites' %}" class="main-nav_link">Реквизиты</a>
+                            </li>
+                            <li class="main-nav_item">
+                                <a href="{% url 'info_plan' %}" class="main-nav_link">План СНТ</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="main-nav_item">
+                        <a href="{% url 'estimates' %}" class="main-nav_link">Фин-хоз деятельность</a>
+                    </li>
+                    <li class="main-nav_item">
+                        <a href="{% url 'live' %}" class="main-nav_link">Жизнь СНТ</a>
+                        <ul class="main-nav_dropdown">
+                            <li class="main-nav_item">
+                                <a href="{% url 'gallery' %}" class="main-nav_link">Галерея</a>
+                            </li>
+                            <li class="main-nav_item">
+                                <a href="{% url 'advertisement' %}" class="main-nav_link">Объявления</a>
+                            </li>
+                            <li class="main-nav_item">
+                                <a href="{% url 'archive' %}" class="main-nav_link">Архив</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="main-nav_item">
+                        <a href="{% url 'forum' %}" class="main-nav_link">Форум</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="main-photo"></div>
+        <main class="main-block">
+            <div class="container">
+                <h1 class="main-block_title">{% block main-block-title %}{% endblock %}</h1>
+                {% block content %}{% endblock %}
+            </div>
+        </main>
+        <footer class="main-footer">
+            <div class="main-footer_top">
+                <div class="container">
+                    <div class="row">
+                        <iframe src="https://yandex.ru/map-widget/v1/-/CGHCvSoO" width="100%" height="400" style="border: 0;" allowfullscreen="true"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="main-footer_bottom">
+                <div class="container">
+                    © 2019 Copyright СНТ "Уран"
+                </div>
+            </div>
+        </footer>
+
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+        <script src="{% static 'js/common.min.js' %}"></script>
+    </body>
+</html>

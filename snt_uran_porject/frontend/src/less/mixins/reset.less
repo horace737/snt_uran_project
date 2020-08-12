@@ -1,0 +1,16 @@
+.ul-reset {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.a-reset(@color, @hoverColor: @darkTextColor, @transition: .4s) {
+    color: @color;
+    transition: all @transition;
+    text-decoration: none;
+
+    &:hover {
+        color: @hoverColor;
+        text-decoration: none;
+    }
+}

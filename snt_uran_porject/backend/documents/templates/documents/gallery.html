@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Галерея{% endblock %}
+{% block seo_description %}Галерея СНТ Уран{% endblock %}
+
+{% block main-block-title %}Галерея{% endblock %}
+
+
+{% block content %}
+    <div class="main-block_content">
+        <div class="row">
+            {% for item in gallery %}
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="gallery_item mb-3">
+                        <a href="{{ item.image.url }}" class="fancybox" data-fancybox="gallery">
+                            <img src="{{ item.image.url }}" alt="{{ item.title }}">
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

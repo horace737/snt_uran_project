@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Объявления{% endblock %}
+{% block seo_description %}Объявления СНТ Уран{% endblock %}
+
+{% block main-block-title %}Объявления{% endblock %}
+
+
+{% block content %}
+    <section class="posts-list posts-list--main">
+        <div class="row">
+            <div class="col-md-8">
+                {% for item in advertisement %}
+                    <div class="advertisement">
+                        <div class="advertisement_title">
+                            {{ item.title }}
+                        </div>
+                        <div class="advertisement_text">
+                            {{ item.text|safe }}
+                        </div>
+                        <div class="advertisement_date">
+                            {{ item.created|date:'F d, Y' }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

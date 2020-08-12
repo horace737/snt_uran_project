@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Фин-хоз деятельность{% endblock %}
+{% block seo_description %}Фин-хоз деятельность СНТ Уран{% endblock %}
+
+{% block main-block-title %}Фин-хоз деятельность{% endblock %}
+
+
+{% block content %}
+    <div class="main-block_content">
+        <div class="row">
+            {% for item in estimate %}
+                <div class="col-md-6">
+                    <div class="estimate">
+                        <div class="estimate_title">
+                            {{ item.title }}
+                        </div>
+                        <div class="estimate_docs">
+                            <div class="estimate_docs_item">
+                                <a href="{{ item.plan.url }}" class="estimate_link" target="_blank">
+                                    <i class="fas fa-file-alt"></i> План
+                                </a>
+                            </div>
+                            {% if item.execution %}
+                                <div class="estimate_docs_item">
+                                    <a href="{{ item.execution.url }}" class="estimate_link" target="_blank">
+                                        <i class="fas fa-file-alt"></i> Исполнение
+                                    </a>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

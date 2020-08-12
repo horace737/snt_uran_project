@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Положения{% endblock %}
+{% block seo_description %}Положения СНТ Уран{% endblock %}
+
+{% block main-block-title %}Положения{% endblock %}
+
+{% block content %}
+    <ul class="list list--reverse">
+        {% for item in docs %}
+            <li class="list_item">
+                <a href="{{ item.document.url }}" class="list_item_link" target="_blank"><i class="fas fa-file-alt"></i> {{ item.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

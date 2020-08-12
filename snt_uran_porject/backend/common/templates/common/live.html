@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Жизнь СНТ{% endblock %}
+{% block seo_description %}Жизнь СНТ{% endblock %}
+
+{% block main-block-title %}Жизнь СНТ{% endblock %}
+
+{% block content %}
+    <ul class="list list--links">
+        <li class="list_item">
+            <a href="{% url 'gallery' %}" class="list_item_link">
+                Галерея
+            </a>
+        </li>
+        <li class="list_item">
+            <a href="{% url 'advertisement' %}" class="list_item_link">
+                Объявления
+            </a>
+        </li>
+        <li class="list_item">
+            <a href="{% url 'archive' %}" class="list_item_link">
+                Архив
+            </a>
+        </li>
+    </ul>
+{% endblock %}

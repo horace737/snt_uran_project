@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Новости{% endblock %}
+{% block seo_description %}Актуаьные новости СНТ Уран{% endblock %}
+
+{% block main-block-title %}Новости{% endblock %}
+
+
+{% block content %}
+    <section class="posts-list posts-list--main">
+        <div class="row">
+            <div class="col-md-8">
+                {% for post in posts %}
+                    {% include 'blog/includes/post.html' %}
+                {% endfor %}
+                {% include 'blog/includes/paginator.html' %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

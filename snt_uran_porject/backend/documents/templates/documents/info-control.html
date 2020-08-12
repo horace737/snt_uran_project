@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Управление{% endblock %}
+{% block seo_description %}Управление СНТ Уран{% endblock %}
+
+{% block main-block-title %}Управление{% endblock %}
+
+{% block content %}
+    <div class="main-block_content">
+        {% for item in content %}
+            {{ item.text|safe }}
+        {% endfor %}
+    </div>
+{% endblock %}

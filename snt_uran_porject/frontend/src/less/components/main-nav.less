@@ -1,0 +1,86 @@
+.main-nav {
+    background: @mainColor;
+    font-family: @mainFont;
+    margin-bottom: 48.6px;
+
+    &_button {
+        color: #fff;
+        font-size: 32px;
+        padding: 12px 0;
+        display: inline-block;
+        cursor: pointer;
+
+        @media (min-width: @desktop) {
+            display: none;
+        }
+    }
+
+    &_list,
+    &_dropdown {
+        .ul-reset;
+        display: none;
+
+        @media (min-width: @desktop) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+    }
+
+    &_item {
+        position: relative;
+        margin-right: 30px;
+
+        &:hover {
+            @media (min-width: @desktop) {
+                &:after {
+                    transition: all .4s;
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    width: 10px;
+                    border-left: 10px solid transparent;
+                    border-right: 10px solid transparent;
+                    border-bottom: 10px solid @secondColor;
+                }
+
+                .main-nav_dropdown {
+                    display: flex;
+                }
+            }
+        }
+    }
+
+    &_link {
+        .a-reset(#fff, #fff);
+        font-size: 20px;
+        padding: 12px 0;
+        display: block;
+    }
+
+    &_dropdown {
+        position: absolute;
+        background: #fff;
+        top: 46.6px;
+        left: 0;
+        width: auto;
+        width: 420px;
+        display: none;
+
+        .main-nav_item {
+            &:hover {
+                &:after {
+                    border-bottom: 10px solid @mainColor;
+                }
+            }
+        }
+
+        .main-nav_link {
+            .a-reset(#000, #000);
+            font-size: 17px;
+        }
+    }
+}

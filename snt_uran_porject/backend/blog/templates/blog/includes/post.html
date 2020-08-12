@@ -1,0 +1,33 @@
+{% load thumbnail %}
+
+<div class="post">
+    <div class="row">
+        <div class="col-12">
+            <div class="post_title">{{ post.title }}</div>
+        </div>
+        <div class="col-lg-6">
+            <div class="post_left">
+                <div class="post_description">
+                    {{ post.description|safe }}
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="post_right">
+                <div class="post_detail">
+                    <div class="post_detail_item">
+                        <span>Автор:</span> {{ post.author }}
+                    </div>
+                    <div class="post_detail_item">
+                        <span>Дата:</span> {{ post.created|date:'F d, Y' }}
+                    </div>
+                </div>
+                <div class="post_link">
+                    <a href="{% url 'post_detail' slug=post.slug %}" class="btn">
+                        Читать
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

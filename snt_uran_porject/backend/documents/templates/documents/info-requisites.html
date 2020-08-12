@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Реквизиты{% endblock %}
+{% block seo_description %}Реквизиты СНТ Уран{% endblock %}
+
+{% block main-block-title %}Реквизиты{% endblock %}
+
+{% block content %}
+    <div class="main-block_content">
+        {% for item in content %}
+            {{ item.text|safe }}
+        {% endfor %}
+    </div>
+{% endblock %}
